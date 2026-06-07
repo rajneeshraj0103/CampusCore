@@ -93,41 +93,43 @@ Phase 2 – Entity Creation
 
 Phase 2A – Project Setup
 
-Phase 3 – Controllers
+Phase 3 – Entity Framework Core Setup
 
-Phase 4 – Services
+Phase 4 – Controllers
 
-Phase 5 – Async / Await
+Phase 5 – Services
 
-Phase 6 – Repository Pattern
+Phase 6 – Async / Await
 
-Phase 7 – Unit Testing (xUnit + Moq)
+Phase 7 – Repository Pattern
 
-Phase 8 – Controller Testing
+Phase 8 – Unit Testing (xUnit + Moq)
 
-Phase 9 – DTOs
+Phase 9 – Controller Testing
 
-Phase 10 – AutoMapper
+Phase 10 – DTOs
 
-Phase 11 – Validation
+Phase 11 – AutoMapper
 
-Phase 12 – Pagination, Filtering & Sorting
+Phase 12 – Validation
 
-Phase 13 – Middleware
+Phase 13 – Pagination, Filtering & Sorting
 
-Phase 14 – JWT Authentication
+Phase 14 – Middleware
 
-Phase 15 – Role-Based Authorization
+Phase 15 – JWT Authentication
 
-Phase 16 – Redis Caching
+Phase 16 – Role-Based Authorization
 
-Phase 17 – RabbitMQ
+Phase 17 – Redis Caching
 
-Phase 18 – Integration Testing
+Phase 18 – RabbitMQ
 
-Phase 19 – React UI
+Phase 19 – Integration Testing
 
-Phase 20 – PostgreSQL Migration
+Phase 20 – React UI
+
+Phase 21 – PostgreSQL Migration
 
 ---
 
@@ -137,14 +139,40 @@ Phase 20 – PostgreSQL Migration
 CampusCore
 
 ├── CampusCore.API
+│   └── Middleware
 │
 ├── CampusCore.Domain
 │   └── Entities
+│       ├── Role
+│       ├── User
+│       ├── Student
+│       ├── Teacher
+│       ├── Course
+│       ├── Enrollment
+│       ├── Result
+│       └── Fee
 │
 └── CampusCore.Infrastructure
     ├── Data
     └── Configurations
 ```
+
+---
+
+## Domain Model
+
+The current domain model contains the following core entities:
+
+* Role
+* User
+* Student
+* Teacher
+* Course
+* Enrollment
+* Result
+* Fee
+
+These entities represent the Phase 1 database design and establish the foundational relationships required for the CampusCore system.
 
 ---
 
@@ -155,11 +183,12 @@ CampusCore
 * Phase 0 – Business Understanding
 * Phase 1 – Database Design
 * Phase 2 – Entity Design
+* Phase 2 – Entity Creation
 * Phase 2A – Project Setup
 
 ### In Progress
 
-* Phase 2 – Entity Creation
+* Phase 3 – Entity Framework Core Setup
 
 ---
 
@@ -211,7 +240,7 @@ Each commit represents a learning milestone and architectural decision.
 
 ### Current Commit
 
-Project Initialization
+Domain Entities & Relationships
 
 ### Completed
 
@@ -221,15 +250,39 @@ Project Initialization
 
 ✅ Entity Design
 
-✅ Solution Setup
+✅ Project Setup
+
+✅ Domain Entity Creation
+
+✅ Entity Relationships
+
+### Domain Entities
+
+✅ Role
+
+✅ User
+
+✅ Student
+
+✅ Teacher
+
+✅ Course
+
+✅ Enrollment
+
+✅ Result
+
+✅ Fee
 
 ### Next
 
-➡ Create Role Entity
+➡ Entity Framework Core Setup
 
-➡ Create User Entity
+➡ CampusCoreDbContext Creation
 
-➡ Begin Domain Model Implementation
+➡ SQL Server Connection Configuration
+
+➡ Initial Migration
 
 ---
 
