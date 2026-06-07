@@ -10,4 +10,9 @@
     <ProjectReference Include="..\CampusCore.Domain\CampusCore.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Configurations\" />
+  </ItemGroup>
+
 </Project>
