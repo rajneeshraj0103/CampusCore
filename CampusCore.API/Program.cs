@@ -1,4 +1,7 @@
 
+using CampusCore.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace CampusCore.API
 {
     public class Program
@@ -6,6 +9,13 @@ namespace CampusCore.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Register CampusCoreDbContext inside Dependency Injection Container.
+            builder.Services.AddDbContext<CampusCoreDbContext>(options =>
+            {
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
 
             // Add services to the container.
 
