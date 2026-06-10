@@ -139,6 +139,8 @@ Phase 21 – PostgreSQL Migration
 CampusCore
 
 ├── CampusCore.API
+│   └── Controllers
+│       └── RoleController
 │
 ├── CampusCore.Domain
 │   └── Entities
@@ -199,6 +201,26 @@ The CampusCore domain model is now fully connected to SQL Server through Entity 
 
 ---
 
+## Controller Implementation Achievements
+
+During Phase 4, the following tasks were completed:
+
+* Created RoleController
+* Configured API routing using Route attribute
+* Configured ApiController behavior
+* Implemented HTTP POST endpoint
+* Implemented HTTP GET endpoint
+* Injected CampusCoreDbContext using Constructor Dependency Injection
+* Implemented Model Binding using Request Body
+* Used IActionResult for API responses
+* Successfully tested APIs using Swagger
+* Inserted Role records into SQL Server through API
+* Retrieved Role records from SQL Server through API
+
+The CampusCore application can now perform Create and Read operations for Roles through ASP.NET Core Web APIs.
+
+---
+
 ## Current Status
 
 ### Completed
@@ -210,7 +232,7 @@ The CampusCore domain model is now fully connected to SQL Server through Entity 
 * Phase 2A – Project Setup
 * Phase 3 – Entity Framework Core Setup
 
-### Next Phase
+### In Progress
 
 * Phase 4 – Controllers
 
@@ -264,7 +286,7 @@ Each commit represents a learning milestone and architectural decision.
 
 ### Current Commit
 
-Entity Framework Core Setup
+Phase 4 – Initial Role Controller Implementation
 
 ### Completed
 
@@ -302,6 +324,48 @@ Entity Framework Core Setup
 
 ✅ Multiple Cascade Path Resolution
 
+✅ RoleController Creation
+
+✅ POST /api/role
+
+✅ GET /api/role
+
+✅ Swagger API Testing
+
+### Concepts Learned
+
+✅ ControllerBase
+
+✅ ApiController
+
+✅ Attribute Routing
+
+✅ Dependency Injection
+
+✅ Constructor Injection
+
+✅ DbContext
+
+✅ DbSet
+
+✅ Model Binding
+
+✅ FromBody
+
+✅ IActionResult
+
+✅ Change Tracking
+
+✅ Add()
+
+✅ SaveChanges()
+
+✅ Deferred Execution
+
+✅ IQueryable
+
+✅ IEnumerable
+
 ### Database Tables Generated
 
 ✅ Roles
@@ -322,15 +386,47 @@ Entity Framework Core Setup
 
 ### Next
 
-➡ Phase 4 – Controllers
+➡ GET /api/role/{id}
 
-➡ Role Controller
+➡ PUT /api/role/{id}
 
-➡ User Controller
+➡ DELETE /api/role/{id}
 
-➡ CRUD Operations
+➡ Route Parameters
 
-➡ Swagger Testing
+➡ FromRoute
+
+➡ Update Operations
+
+➡ Delete Operations
+
+---
+
+## API Endpoints Implemented
+
+### Role API
+
+#### Create Role
+
+POST /api/role
+
+Creates a new role record in SQL Server.
+
+#### Get Roles
+
+GET /api/role
+
+Returns all role records from SQL Server.
+
+### Current CRUD Progress
+
+✅ Create
+
+✅ Read
+
+⬜ Update
+
+⬜ Delete
 
 ---
 
