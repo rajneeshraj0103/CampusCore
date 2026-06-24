@@ -32,5 +32,47 @@ namespace CampusCore.API.Controllers
 
             return Ok(roles);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetRoleById(int id)
+        {
+            var role = _context.Roles.Find(id);
+
+            if (role == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(role);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateRole(int id, [FromBody] Role updatedRole)
+        {
+            var role = _context.Roles.FirstOrDefault(r => r.RoleId == id);
+
+            if (role == null)
+            {
+                return NotFound();
+            }
+            role.RoleName = updatedRole.RoleName;
+            _context.SaveChanges();
+            return Ok(role);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteRole(int id)
+        {
+            var role = _context.Roles.FirstOrDefault(r => r.RoleId ==  id);
+
+            if(role == null)
+            {
+                return NotFound();
+            }
+
+            _context.Roles.Remove(role);
+            _context.SaveChanges();
+            return NoContent();
+        }
     }
 }

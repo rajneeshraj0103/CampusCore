@@ -97,13 +97,13 @@ Phase 3 – Entity Framework Core Setup
 
 Phase 4 – Controllers
 
-Phase 5 – Services
+Phase 5 – Async / Await
 
-Phase 6 – Async / Await
+Phase 6 – Service Layer
 
 Phase 7 – Repository Pattern
 
-Phase 8 – Unit Testing (xUnit + Moq)
+Phase 8 – Service Unit Testing (xUnit + Moq)
 
 Phase 9 – Controller Testing
 
@@ -130,6 +130,9 @@ Phase 19 – Integration Testing
 Phase 20 – React UI
 
 Phase 21 – PostgreSQL Migration
+
+Phase 22 – Azure Deployment
+
 
 ---
 
@@ -210,14 +213,23 @@ During Phase 4, the following tasks were completed:
 * Configured ApiController behavior
 * Implemented HTTP POST endpoint
 * Implemented HTTP GET endpoint
+* Implemented HTTP GET By Id endpoint
+* Implemented HTTP PUT endpoint
+* Implemented HTTP DELETE endpoint
+* Implemented Route Parameter handling
+* Implemented resource existence validation
+* Implemented update operations
+* Implemented delete operations
 * Injected CampusCoreDbContext using Constructor Dependency Injection
 * Implemented Model Binding using Request Body
 * Used IActionResult for API responses
-* Successfully tested APIs using Swagger
+* Successfully tested all CRUD APIs using Swagger
 * Inserted Role records into SQL Server through API
 * Retrieved Role records from SQL Server through API
+* Updated existing Role records through API
+* Deleted Role records through API
 
-The CampusCore application can now perform Create and Read operations for Roles through ASP.NET Core Web APIs.
+The CampusCore application can now perform complete CRUD operations for Roles through ASP.NET Core Web APIs.
 
 ---
 
@@ -227,14 +239,11 @@ The CampusCore application can now perform Create and Read operations for Roles 
 
 * Phase 0 – Business Understanding
 * Phase 1 – Database Design
-* Phase 2 – Entity Design
-* Phase 2 – Entity Creation
+* Phase 2 – Entity Design & Creation
 * Phase 2A – Project Setup
 * Phase 3 – Entity Framework Core Setup
-
-### In Progress
-
 * Phase 4 – Controllers
+
 
 ---
 
@@ -284,9 +293,9 @@ Each commit represents a learning milestone and architectural decision.
 
 ## Current Milestone
 
-### Current Commit
+### Current Milestone
 
-Phase 4 – Initial Role Controller Implementation
+Phase 4 – Controllers Completed
 
 ### Completed
 
@@ -330,7 +339,20 @@ Phase 4 – Initial Role Controller Implementation
 
 ✅ GET /api/role
 
+✅ GET /api/role/{id}
+
+✅ PUT /api/role/{id}
+
+✅ DELETE /api/role/{id}
+
+✅ Route Parameter Handling
+
+✅ Resource Existence Validation
+
+✅ CRUD API Testing
+
 ✅ Swagger API Testing
+
 
 ### Concepts Learned
 
@@ -360,6 +382,26 @@ Phase 4 – Initial Role Controller Implementation
 
 ✅ SaveChanges()
 
+✅ Find()
+
+✅ FirstOrDefault()
+
+✅ Route Parameters
+
+✅ HTTP Status Codes
+
+✅ NotFound()
+
+✅ NoContent()
+
+✅ Update Operations
+
+✅ Delete Operations
+
+✅ Entity Tracking
+
+✅ Change Detection
+
 ✅ Deferred Execution
 
 ✅ IQueryable
@@ -386,19 +428,19 @@ Phase 4 – Initial Role Controller Implementation
 
 ### Next
 
-➡ GET /api/role/{id}
+➡ Convert CRUD APIs to Async/Await
 
-➡ PUT /api/role/{id}
+➡ Implement SaveChangesAsync()
 
-➡ DELETE /api/role/{id}
+➡ Implement ToListAsync()
 
-➡ Route Parameters
+➡ Implement FindAsync()
 
-➡ FromRoute
+➡ Implement FirstOrDefaultAsync()
 
-➡ Update Operations
+➡ Understand Async Request Processing
 
-➡ Delete Operations
+➡ Learn Thread Management in ASP.NET Core
 
 ---
 
@@ -418,15 +460,67 @@ GET /api/role
 
 Returns all role records from SQL Server.
 
+#### Get Role By Id
+
+GET /api/role/{id}
+
+Returns a specific role by its identifier.
+
+#### Update Role
+
+PUT /api/role/{id}
+
+Updates an existing role record.
+
+#### Delete Role
+
+DELETE /api/role/{id}
+
+Deletes an existing role record.
+
 ### Current CRUD Progress
 
 ✅ Create
 
 ✅ Read
 
-⬜ Update
+✅ Update
 
-⬜ Delete
+✅ Delete
+
+---
+
+## Swagger Testing Summary
+
+The following scenarios were successfully tested using Swagger:
+
+### Create Role
+
+✅ Created new role records
+
+### Get All Roles
+
+✅ Retrieved all role records
+
+### Get Role By Id
+
+✅ Retrieved existing role
+
+✅ Returned 404 for non-existing role
+
+### Update Role
+
+✅ Updated existing role
+
+✅ Returned 404 for non-existing role
+
+### Delete Role
+
+✅ Deleted existing role
+
+✅ Returned 404 for non-existing role
+
+The Role API CRUD workflow has been fully validated through Swagger and SQL Server verification.
 
 ---
 
